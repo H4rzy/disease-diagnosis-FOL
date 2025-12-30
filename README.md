@@ -230,7 +230,7 @@ File `Disease_Symptom.ndjson` chứa dữ liệu theo định dạng NDJSON (New
 
 ## 👥 Tác giả
 
-- **Tên của bạn** - *Developer*
+- Nguyễn Duy Phát A.K.A Harzy
 
 ---
 
