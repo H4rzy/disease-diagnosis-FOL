@@ -1,0 +1,278 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 1)),
+              url('https://images.unsplash.com/photo-1576091160550-2173dba9996a?...');
+  background-size: cover;
+  background-position: center;
+}
+
+
+.App {
+  text-align: center;
+  width: 100%;
+  max-width: 900px;
+}
+
+.App-header {
+  background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 1)),
+    url('https://images.unsplash.com/photo-1576091160550-2173dba9996a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8aGVhbHRoY2FyZSx0ZWNobm9sb2d5fHx8fHx8MTY2NTgyMjA3NA&ixlib=rb-4.0.3&q=80&w=1080');
+  background-size: cover;
+  background-position: center;
+  padding: 80px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Thanh tìm kiếm --- */
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto 0 auto;
+  border-radius: 50px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.15); /* trong suốt nhẹ */
+  backdrop-filter: blur(8px); /* hiệu ứng mờ nền */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Ô nhập liệu --- */
+.search-input {
+  flex: 1;
+  padding: 16px 24px;
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  font-weight: 400;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* --- Nút tìm kiếm --- */
+.search-button {
+  padding: 16px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 0 50px 50px 0;
+}
+
+.search-button:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+/* --- Danh sách gợi ý --- */
+.suggestion-list {
+  list-style: none;
+  margin: 10px 0 0 0;
+  padding: 0;
+  width: 100%;
+  max-width: 600px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.suggestion-list li {
+  padding: 12px 20px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.suggestion-list li:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* --- Vùng chứa tag + input --- */
+.tag-input-area {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  padding: 10px 15px;
+}
+
+/* --- Tag riêng --- */
+.tag {
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 123, 255, 0.8);
+  color: white;
+  border-radius: 25px;
+  padding: 6px 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: default;
+}
+
+.remove-tag {
+  margin-left: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #fff;
+  transition: color 0.2s ease;
+}
+
+.remove-tag:hover {
+  color: #ffcccc;
+}
+
+/* --- Input --- */
+.search-input {
+  flex-grow: 1;
+  min-width: 150px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+/* --- Danh sách gợi ý --- */
+.suggestion-list {
+  list-style: none;
+  margin: 10px 0 0 0;
+  padding: 0;
+  width: 100%;
+  max-width: 600px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.suggestion-list li {
+  padding: 12px 20px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.suggestion-list li:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.result-box {
+  margin-top: 30px;
+  padding: 20px 30px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  text-align: left;
+  max-width: 600px;
+  width: 100%;
+}
+
+.result-box h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #00c6ff;
+}
+
+.result-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+.result-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.result-list li:hover {
+  background: rgba(0, 123, 255, 0.3);
+}
+
+.result-list .disease {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.result-list .percent {
+  font-weight: 500;
+  color: #00ffcc;
+}
+
+.result-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+.result-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 10px 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+.result-list .disease {
+  flex: 1;
+  font-weight: 600;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.bar-container {
+  flex: 2;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  margin: 0 12px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00c6ff, #007bff);
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.percent {
+  flex: 0.5;
+  font-weight: 500;
+  color: #00ffcc;
+  text-align: right;
+}
